@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+    <head>
+        <title>Nao Medic Host :: Web UI</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+            <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+        <main class="container">
+        <h1> </h1>
+        <h1>Interface de gestion de patients</h1>
+        <div class="card" style="width: 18rem; margin: 30px auto;">
+            <img class="card-img-top" src="/static/img.jpg" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title"><center>Docteur PASTEUR</center></h5>
+                <p class="card-text"><center>Cabinet de Champs-sur-Marne</center></p>
+            </div>
+        </div>
+
+        <table class="table table-striped">
+            <center>
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Prénom NOM</th>
+                        <th scope="col">Horaire de passage</th>
+                        <th scope="col">Commentaire</th>
+                        <th scope="col">Arrivé</th>
+                        <th scope="col">Examiné</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for client in clients %}
+                    <tr>
+                        <th scope="row">{{ client.name }}</th>
+                        <td>{{ client.date }}</td>
+                        <td>{{ client.comment }}</td>
+                        <td>
+                            <div class="form-check">
+                                <input class="form-check-input position-static" type="checkbox" value="arrived" {{'checked' if client.status == 'arrived' }}/>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-check">
+                                <input class="form-check-input position-static" type="checkbox" value="examined" />
+                            </div>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </center>
+        </table>
+        </main>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    </body>
+</html>

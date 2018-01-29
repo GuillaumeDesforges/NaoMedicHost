@@ -1,19 +1,27 @@
 import json
 
-from flask import Flask
+from flask import Flask, render_template
 app = Flask(__name__)
 
 
 clients = [
     {
         'name': "Will Smith",
-        'status': "arrived"
+        'status': "arrived",
+        'date': "01/01/2018 12:00",
+        'comment': "Fièvre et mal au ventre"
+    },
+    {
+        'name': "Luc Dormieux",
+        'status': "awaited",
+        'date': "02/01/2018 8:30",
+        'comment': "Tensions dans le déviatorique"
     }
 ]
 
 @app.route('/')
 def root():
-    return "Hello World!"
+    return render_template("index.html", clients=clients)
 
 @app.route('/api/clients')
 def getClientsList():
