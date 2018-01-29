@@ -1,5 +1,5 @@
 # Byte-compiled / optimized / DLL files
-__pycache__/
+**/__pycache__/
 *.py[cod]
 *$py.class
 
@@ -9,18 +9,18 @@ __pycache__/
 # Distribution / packaging
 .Python
 build/
-develop-eggs/
+**/develop-eggs/
 dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-wheels/
-*.egg-info/
+**/downloads/
+**/eggs/
+**/.eggs/
+**/lib/
+**/lib64/
+**/parts/
+**/sdist/
+**/var/
+**/wheels/
+**/*.egg-info/
 .installed.cfg
 *.egg
 MANIFEST
@@ -36,15 +36,15 @@ pip-log.txt
 pip-delete-this-directory.txt
 
 # Unit test / coverage reports
-htmlcov/
-.tox/
+**/htmlcov/
+**/.tox/
 .coverage
 .coverage.*
 .cache
 nosetests.xml
 coverage.xml
 *.cover
-.hypothesis/
+**/.hypothesis/
 
 # Translations
 *.mo
@@ -52,22 +52,22 @@ coverage.xml
 
 # Django stuff:
 *.log
-.static_storage/
-.media/
+**/.static_storage/
+**/.media/
 local_settings.py
 
 # Flask stuff:
-instance/
+**/instance/
 .webassets-cache
 
 # Scrapy stuff:
 .scrapy
 
 # Sphinx documentation
-docs/_build/
+**/docs/_build/
 
 # PyBuilder
-target/
+**/target/
 
 # Jupyter Notebook
 .ipynb_checkpoints
@@ -84,11 +84,11 @@ celerybeat-schedule
 # Environments
 .env
 .venv
-env/
-venv/
-ENV/
-env.bak/
-venv.bak/
+**/env/
+**/venv/
+**/ENV/
+**/env.bak/
+**/venv.bak/
 
 # Spyder project settings
 .spyderproject
@@ -101,4 +101,4 @@ venv.bak/
 /site
 
 # mypy
-.mypy_cache/
+**/.mypy_cache/
