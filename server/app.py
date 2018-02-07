@@ -27,7 +27,7 @@ def root():
 @app.route('/nextclient')
 def getNextClient():
 	if nextClient:
-		return json.dumps(nextClient)
+		return nextClient, 200
 	else:
 		return 'No next client', 400
 
