@@ -3,6 +3,7 @@ import json
 from flask import Flask, render_template
 app = Flask(__name__)
 
+nextClient = "Will Smith"
 
 clients = [
     {
@@ -22,6 +23,13 @@ clients = [
 @app.route('/')
 def root():
     return render_template("index.html", clients=clients)
+
+@app.route('/nextclient')
+def getNextClient():
+	if nextClient:
+		return json.dumps(nextClient)
+	else:
+		return 'No next client', 400
 
 @app.route('/api/clients')
 def getClientsList():
